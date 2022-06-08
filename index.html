@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Connected</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: black;
+				text-decoration: none;
+				cursor: default
+			}
+			#main{
+				margin: 0 auto;
+				text-align: center;
+			}
+			#maintitle{
+				font-size: 50px;
+			}
+		</style>
+		<script>
+			var xhr = new XMLHttpRequest();
+			xhr.open('get', 'https://v1.hitokoto.cn');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var data = JSON.parse(xhr.responseText);
+					var hitokoto = document.getElementById('hitokoto_text');
+					hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+					hitokoto.innerText = data.hitokoto;
+				}
+			}
+			xhr.send();
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<a id="maintitle">Connection successful</a><br />
+			<a>hitokoto</a>
+			<a id="hitokoto_text"></a>
+		</div>
+	</body>
+</html>
