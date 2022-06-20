@@ -1,5 +1,17 @@
 // 注意：live2d_path 参数应使用绝对路径
-const live2d_path = "https://cdn.sboxm.com/live2d/";
+var fun = function() {
+	var flag = parseInt(Math.floor(Math.random() * (100 - 0 + 1)) + 0);
+	if (flag < 30) {
+		path = "https://cdn2.sboxm.com/live2d/";
+		api = "https://cdn2.sboxm.com/live2d/api/";
+		console.log("cdn2 Called");
+	} else {
+		path = "https://cdn.sboxm.com/live2d/";
+		api = "https://cdn.sboxm.com/live2d/api/";
+		console.log("cdn1 Called");
+	}
+}()
+const live2d_path = path;
 //const live2d_path = "/live2d-widget/";
 
 // 封装异步加载资源的方法
@@ -11,8 +23,7 @@ function loadExternalResource(url, type) {
 			tag = document.createElement("link");
 			tag.rel = "stylesheet";
 			tag.href = url;
-		}
-		else if (type === "js") {
+		} else if (type === "js") {
 			tag = document.createElement("script");
 			tag.src = url;
 		}
@@ -34,7 +45,7 @@ if (screen.width >= 768) {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/"
-			cdnPath: "https://cdn.sboxm.com/live2d/api/"
+			cdnPath: api
 		});
 	});
 }
@@ -43,21 +54,21 @@ if (screen.width >= 768) {
 // 初始化看板娘会自动加载指定目录下的 waifu-tips.json
 
 console.log(`
-  く__,.ヘヽ.        /  ,ー､ 〉
-           ＼ ', !-─‐-i  /  /´
-           ／｀ｰ'       L/／｀ヽ､
-         /   ／,   /|   ,   ,       ',
-       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
-        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
-          !,/7 '0'     ´0iソ|    |
-          |.从"    _     ,,,, / |./    |
-          ﾚ'| i＞.､,,__  _,.イ /   .i   |
-            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
-              | |/i 〈|/   i  ,.ﾍ |  i  |
-             .|/ /  ｉ：    ﾍ!    ＼  |
-              kヽ>､ﾊ    _,.ﾍ､    /､!
-              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
-              ﾚ'ヽL__|___i,___,ンﾚ|ノ
-                  ﾄ-,/  |___./
-                  'ｰ'    !_,.:
-`);
+			  く__,.ヘヽ.        /  ,ー､ 〉
+			           ＼ ', !-─‐-i  /  /´
+			           ／｀ｰ'       L/／｀ヽ､
+			         /   ／,   /|   ,   ,       ',
+			       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+			        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+			          !,/7 '0'     ´0iソ|    |
+			          |.从"    _     ,,,, / |./    |
+			          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+			            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+			              | |/i 〈|/   i  ,.ﾍ |  i  |
+			             .|/ /  ｉ：    ﾍ!    ＼  |
+			              kヽ>､ﾊ    _,.ﾍ､    /､!
+			              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+			              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+			                  ﾄ-,/  |___./
+			                  'ｰ'    !_,.:
+			`);
