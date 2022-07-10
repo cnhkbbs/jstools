@@ -2,8 +2,8 @@
 var fun = function() {
 	var flag = parseInt(Math.floor(Math.random() * (100 - 0 + 1)) + 0);
 	if (flag < 30) {
-		path = "https://cdn2.sboxm.com/live2d/";
-		api = "https://cdn2.sboxm.com/live2d/api/";
+		path = "https://sboxmcdn.pages.dev/live2d/";
+		api = "https://sboxmcdn.pages.dev/live2d/api/";
 		console.log("cdn2 Called");
 	} else {
 		path = "https://cdn.sboxm.com/live2d/";
