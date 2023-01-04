@@ -6,8 +6,8 @@ var fun = function() {
 		api = "https://cnhkbbs.github.io/staticcdn/live2d/api/";
 		console.log("cdn2 Called");
 	} else {
-		path = "https://sboxmcdn.pages.dev/staticcdn/live2d/";
-		api = "https://sboxmcdn.pages.dev/staticcdn/live2d/api/";
+		path = "https://cnhkbbs.github.io/staticcdn/live2d/";
+		api = "https://cnhkbbs.github.io/staticcdn/live2d/api/";
 		console.log("cdn1 Called");
 	}
 }()
