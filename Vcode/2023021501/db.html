@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>db.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+db.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># -*- author:cyq -*-</span>
+<span class="s2">import </span><span class="s1">pymongo</span>
+<span class="s2">from </span><span class="s1">pymongo.server_api </span><span class="s2">import </span><span class="s1">ServerApi</span>
+
+
+<span class="s2">def </span><span class="s1">db_connect():</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">client = pymongo.MongoClient(</span>
+            <span class="s3">&quot;mongodb+srv://2997019346:2997019346@cluster0.sdvdugc.mongodb.net/?retryWrites=true&amp;w=majority&quot;</span><span class="s2">,</span>
+            <span class="s1">server_api=ServerApi(</span><span class="s3">'1'</span><span class="s1">))</span>
+        <span class="s2">return </span><span class="s1">client</span>
+    <span class="s2">except </span><span class="s1">ConnectionError:</span>
+        <span class="s2">return False</span>
+
+
+<span class="s2">def </span><span class="s1">db_insert(col</span><span class="s2">, </span><span class="s1">title</span><span class="s2">, </span><span class="s1">anser):</span>
+    <span class="s1">inspect_dict = {</span><span class="s3">'title'</span><span class="s1">: title</span><span class="s2">, </span><span class="s3">'anset'</span><span class="s1">: anser}</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">col.insert_one(inspect_dict)</span>
+        <span class="s2">return True</span>
+    <span class="s2">except </span><span class="s1">Warning:</span>
+        <span class="s2">return False</span>
+
+
+<span class="s2">def </span><span class="s1">db_find(col</span><span class="s2">, </span><span class="s1">title):</span>
+    <span class="s2">return </span><span class="s1">col.find({</span><span class="s3">'title'</span><span class="s1">: title})</span>
+</pre>
+</body>
+</html>
