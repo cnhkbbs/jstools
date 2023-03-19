@@ -1,6 +1,6 @@
 (function () {
   let ua = navigator.userAgent.toLowerCase();
-  if (true||(ua.match(/MicroMessenger/i) == 'micromessenger') || (ua.match(/QQ/i) == 'qq')) {
+  if ((ua.match(/MicroMessenger/i) == 'micromessenger') || (ua.match(/QQ/i) == 'qq')) {
     const body = document.querySelector('body');
     if (body) {
       body.innerHTML = `
