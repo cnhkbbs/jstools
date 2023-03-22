@@ -1,20 +1,51 @@
-(function () {
-  let ua = navigator.userAgent.toLowerCase();
-  if ((ua.match(/MicroMessenger/i) == 'micromessenger') || (ua.match(/QQ/i) == 'qq')) {
+(function() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isWeChat = ua.indexOf('micromessenger') !== -1;
+  const isQQ = ua.indexOf('qq') !== -1;
+
+  if (isWeChat || isQQ) {
     const body = document.querySelector('body');
     if (body) {
-      body.innerHTML = `
-        <div
-          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; background-color: gold; width: 100%; height: 100%;">
-          <div style="border: solid;margin: 12%; padding: 3%;text-align: center;">
-            <p style="color: black;font-size: 65px;">由于我们没有对当前浏览器适配，请复制当前网址到其它浏览器打开</p>
-            <div onclick="copyToClipboard()" style="width: 70%;height: 5%; background-color: black; margin: 0 auto;">
-              <a style="color: white;font-size: 500%;">复制网址</a>
-            </div>
-          </div>
-        </div>
-      `;
-      function copyToClipboard(){
+      const overlay = document.createElement('div');
+      overlay.style.position = 'absolute';
+      overlay.style.top = '50%';
+      overlay.style.left = '50%';
+      overlay.style.transform = 'translate(-50%, -50%)';
+      overlay.style.textAlign = 'center';
+      overlay.style.backgroundColor = 'gold';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+
+      const content = document.createElement('div');
+      content.style.border = 'solid';
+      content.style.margin = '12%';
+      content.style.padding = '3%';
+      content.style.textAlign = 'center';
+
+      const message = document.createElement('p');
+      message.style.color = 'black';
+      message.style.fontSize = '65px';
+      message.textContent = '由于我们没有对当前浏览器适配，请复制当前网址到其它浏览器打开';
+
+      const button = document.createElement('div');
+      button.style.width = '70%';
+      button.style.height = '5%';
+      button.style.backgroundColor = 'black';
+      button.style.margin = '0 auto';
+      button.onclick = copyToClipboard;
+
+      const link = document.createElement('a');
+      link.style.color = 'white';
+      link.style.fontSize = '500%';
+      link.textContent = '复制网址';
+
+      body.appendChild(overlay);
+      overlay.appendChild(content);
+      content.appendChild(message);
+      content.appendChild(button);
+      button.appendChild(link);
+
+      function copyToClipboard() {
         const el = document.createElement('textarea');
         el.value = window.location.href;
         document.body.appendChild(el);
