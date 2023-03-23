@@ -4,9 +4,10 @@
   const isQQ = ua.indexOf('qq') !== -1;
 
   if (isWeChat || isQQ) {
+    $('body').empty();
     const body = document.querySelector('body');
     if (body) {
-      const overlay = document.createElement('QWdiv');
+      const overlay = document.createElement('div');
       overlay.style.position = 'absolute';
       overlay.style.top = '50%';
       overlay.style.left = '50%';
@@ -16,7 +17,7 @@
       overlay.style.width = '100%';
       overlay.style.height = '100%';
 
-      const content = document.createElement('QWdiv');
+      const content = document.createElement('div');
       content.style.border = 'solid';
       content.style.margin = '12%';
       content.style.padding = '3%';
@@ -27,7 +28,7 @@
       message.style.fontSize = '65px';
       message.textContent = '由于我们没有对当前浏览器适配，请复制当前网址到其它浏览器打开';
 
-      const button = document.createElement('QWdiv');
+      const button = document.createElement('div');
       button.style.width = '70%';
       button.style.height = '5%';
       button.style.backgroundColor = 'black';
@@ -36,7 +37,7 @@
 
       const link = document.createElement('QWa');
       link.style.color = 'white';
-      link.style.fontSize = '500%';
+      link.style.fontSize = '60px';
       link.textContent = '复制网址';
 
       body.appendChild(overlay);
