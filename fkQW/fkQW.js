@@ -4,8 +4,8 @@
   const isQQ = ua.indexOf('qq') !== -1;
 
   if (isWeChat || isQQ) {
-    $('body').empty();
     const body = document.querySelector('body');
+    body.empty();
     if (body) {
       const overlay = document.createElement('div');
       overlay.style.position = 'absolute';
