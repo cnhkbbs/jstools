@@ -16,7 +16,7 @@ GithubPages:  https://cnhkbbs.github.io/staticcdn/
 
 Render:       https://sboxmcdn.onrender.com/
 
-jsDelivr:     https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn@main/
+jsDelivr:     https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn/
 ```
 ***
 ## 使用
@@ -28,7 +28,7 @@ CDN+文件目录
 ```
 https://cnhkbbs.github.io/staticcdn/showFPS/showFPS.js
 https://sboxmcdn.onrender.com/showFPS/showFPS.js
-https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn@main/showFPS/showFPS.js
+https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn/showFPS/showFPS.js
 ```
 HTML代码
 ```
