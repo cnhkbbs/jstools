@@ -1,1 +1,1 @@
-['https://sboxm.link/staticcdn/QueryHelper/config.json','https://sboxm.link/staticcdn/QueryHelper/config.json']
+['1.py','2.py']
