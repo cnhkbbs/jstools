@@ -1,0 +1,1 @@
+['https://sboxm.link/staticcdn/QueryHelper/config.json','https://sboxm.link/staticcdn/QueryHelper/config.json']
