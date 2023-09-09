@@ -1,0 +1,219 @@
+<!--
+ * 
+ * 　　┏┓　　　┏┓+ +
+ * 　┏┛┻━━━┛┻┓ + +
+ * 　┃　　　　　　　┃ 　
+ * 　┃　　　━　　　┃ ++ + + +
+ *  ████━████ ┃+
+ * 　┃　　　　　　　┃ +
+ * 　┃　　　┻　　　┃
+ * 　┃　　　　　　　┃ + +
+ * 　┗━┓　　　┏━┛
+ * 　　　┃　　　┃　　　　　　　　　　　
+ * 　　　┃　　　┃ + + + +
+ * 　　　┃　　　┃
+ * 　　　┃　　　┃ +  神兽保佑
+ * 　　　┃　　　┃    代码无bug　　
+ * 　　　┃　　　┃　　+　　　　　　　　　
+ * 　　　┃　 　　┗━━━┓ + +
+ * 　　　┃ 　　　　　　　┣┓
+ * 　　　┃ 　　　　　　　┏┛
+ * 　　　┗┓┓┏━┳┓┏┛ + + + +
+ * 　　　　┃┫┫　┃┫┫
+ * 　　　　┗┻┛　┗┻┛+ + + +
+ * 
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>查询助手</title>
+		<script>
+			// cookie 操作
+			function setCookie(name, value, iDay) {
+				var oDate = new Date();
+				oDate.setDate(oDate.getDate() + iDay);
+				document.cookie = name + '=' + value + ';expires=' + oDate;
+			}
+
+			function getCookie(name) {
+				var arr = document.cookie.split('; ');
+				var i = 0;
+				for (i = 0; i < arr.length; i++) {
+					var arr2 = arr[i].split('=');
+
+					if (arr2[0] == name) {
+						return arr2[1];
+					}
+				}
+				return '';
+			}
+			// 保存表单
+			function save_form(name, password, chinese_name, server, safe_time, executions, gnmkdm) {
+				setCookie('name', name, 360000);
+				setCookie('password', password, 360000);
+				setCookie('chinese_name', chinese_name, 360000);
+				setCookie('server', server, 360000);
+				setCookie('safe_time', safe_time, 360000);
+				setCookie('executions', executions, 360000);
+				setCookie('gnmkdm', gnmkdm, 360000);
+			}
+			// 提交检查
+			function prepara_submit() {
+				var name = document.getElementById("name").value;
+				var password = document.getElementById("password").value;
+				var chinese_name = document.getElementById("chinese_name").value;
+				var server = document.getElementById("server").value;
+				var safe_time = document.getElementById("safe_time").value;
+				var executions = document.getElementById("executions").value;
+				var gnmkdm = document.getElementById("gnmkdm").value;
+				if (name == "" || password == "" || chinese_name == "" || server == "" || safe_time == "" || executions == "" ||
+					gnmkdm == "") {
+					alert("表单不完整");
+					return false;
+				}
+				save_form(name, password, chinese_name, server, safe_time, executions, gnmkdm);
+				return true;
+			}
+			// 获取结果
+			function getresult() {
+				const ajax = new XMLHttpRequest();
+				ajax.open('post', 'http://127.0.0.1:2023/getresult', true);
+				ajax.setRequestHeader('Content-Type', 'application/json');
+				ajax.send();
+				ajax.onload = function() {
+					if (ajax.status === 200) {
+						var resultframe = document.getElementById('resultframe');
+						resultframe.innerHTML = ajax.responseText;
+					} else {
+						console.log('Error: ' + ajax.status);
+					}
+				};
+			}
+		</script>
+		<style>
+			#useguide {
+				color: blue;
+				cursor: help;
+			}
+
+			#useguide:hover {
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+<!-- 		<script>
+			setInterval("get_status()", 60000);
+			function get_status() {
+				var article = document.getElementById("article");
+				const xhr = new XMLHttpRequest();
+				xhr.open('post', 'http://127.0.0.1:2023/', true);
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4) {
+						if (xhr.status == 200) {
+							console.log(xhr.response);
+						} else {
+							console.log(xhr.response);
+							article.innerHTML = "与驱动连接失败,请打开驱动后刷新网页";
+						}
+					}
+				}
+			}
+		</script> -->
+		<article style="width: 65%;margin: 0 auto;text-align: center;" id="article">
+			<a style="font-size: 3rem;">查询助手</a><a id="useguide" href="https://github.com/cnhkbbs/zfspider"
+				target="_blank">使用指南</a>
+			<form action="http://127.0.0.1:2023/submit" method="post" onsubmit="return prepara_submit();">
+				<table style="margin: 0 auto;">
+					<tr>
+						<td><a>账号：</a></td>
+						<td><input name="name" id="name" type="text" /></td>
+					</tr>
+					<tr>
+						<td><a>密码：</a></td>
+						<td><input name="password" id="password" type="password" /></td>
+					</tr>
+					<tr>
+						<td><a>姓名：</a></td>
+						<td><input name="chinese_name" id="chinese_name" type="text" /></td>
+					</tr>
+					<tr>
+						<td><a>目标服务器:</a></td>
+						<td><input name="server" id="server" type="text" /></td>
+					</tr>
+					<tr>
+						<td><a>安全时间:</a></td>
+						<td><input name="safe_time" id="safe_time" type="text" /></td>
+					</tr>
+					<tr>
+						<td><a>单次执行次数:</a></td>
+						<td><input name="executions" id="executions" type="text" /></td>
+					</tr>
+					<tr>
+						<td><a>gnmkdm:</a></td>
+						<td><input name="gnmkdm" id="gnmkdm" type="text" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<a>Header</a>
+							<select name="header">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<input type="submit" value="提交任务"><input type="reset" value="清空表单">
+			</form>
+			<hr>
+			<div id="getresult">
+				<a>获取结果</a><br />
+				<button onclick="getresult()">获取</button>
+			</div>
+		</article>
+		<div id="resultframe"></div>
+		<footer style="text-align: center;"><a href="https://github.com/cnhkbbs/zfspider">Source code</a></footer>
+		<script>
+			// 读取cookie
+			(function() {
+				get_status();
+				var name = getCookie('name');
+				var chinese_name = getCookie('chinese_name');
+				var password = getCookie('password');
+				var server = getCookie('server');
+				var safe_time = getCookie('safe_time');
+				var executions = getCookie('executions');
+				var gnmkdm = getCookie('gnmkdm');
+				document.getElementById("name").value = name;
+				document.getElementById("password").value = password;
+				document.getElementById("chinese_name").value = chinese_name;
+				document.getElementById("server").value = server;
+				document.getElementById("safe_time").value = safe_time;
+				document.getElementById("executions").value = executions;
+				document.getElementById("gnmkdm").value = gnmkdm;
+			})();
+			function get_status() {
+				var article = document.getElementById("article");
+				const xhr = new XMLHttpRequest();
+				xhr.open('post', 'http://127.0.0.1:2023/', true);
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4) {
+						if (xhr.status == 200) {
+							console.log(xhr.response);
+						} else {
+							console.log(xhr.response);
+							article.innerHTML = "与驱动连接失败,请打开驱动后刷新网页";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
