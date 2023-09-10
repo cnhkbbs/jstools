@@ -93,6 +93,36 @@
 			}
 		</script>
 		<style>
+			article {
+				position: absolute;
+				z-index: -1;
+				top: 10%;
+				left: 5%;
+				text-align: center;
+				background-color: rgba(255, 255, 255, 0.2);
+				width: 90%;
+				height: 80%;
+				box-shadow: 0 5px 15px rgba(20, 20, 20, 0.5);
+				border-radius: 4%;
+				backdrop-filter: blur(20px);
+			}
+
+			button {
+				width: 260px;
+				height: 40px;
+				border: 2px solid #fff;
+				background: none;
+				border-radius: 25px;
+				color: #fff;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			button:hover{
+				background-color: #fff;
+				color: #6eb6ff;
+				cursor: pointer;
+			}
+
 			#useguide {
 				color: blue;
 				cursor: help;
@@ -101,10 +131,79 @@
 			#useguide:hover {
 				font-size: 2em;
 			}
+
+			#background_image {
+				/* background-image: url("https://cdnjson.com/images/2023/09/09/e70f1582ae6182175e3f48420b9a004c--1305450053.jpg"); */
+				background-color: #6eb6ff;
+				background-size: 97em;
+				background-repeat: no-repeat;
+				left: 0px;
+				top: 0px;
+				position: fixed;
+				z-index: -1;
+				width: 100%;
+				height: 47em;
+			}
+
+			#form_table {
+				margin: 0 auto;
+				height: 20em;
+			}
+
+			#form_table tr td a {
+				font-size: 25px;
+				color: white;
+			}
+
+			#form_table tr td input {
+				width: 260px;
+				height: 30px;
+				border: 2px solid #fff;
+				background-color: #fff;
+				outline: none;
+				border-radius: 25px;
+				text-indent: 15px;
+				font-size: 18px;
+				margin: 1px;
+			}
+			#selector{
+				width: 260px;
+				height: 30px;
+				border: 2px solid #fff;
+				background-color: #fff;
+				outline: none;
+				border-radius: 25px;
+				text-indent: 15px;
+				font-size: 18px;
+				margin: 1px;
+			}
+
+			#resultframe {
+				background-color: white;
+			}
+
+			.form_button {
+				width: 200px;
+				height: 40px;
+				border: 2px solid #fff;
+				background: none;
+				border-radius: 25px;
+				color: #fff;
+				font-size: 18px;
+				font-weight: bold;
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+
+			.form_button:hover {
+				background-color: #fff;
+				color: #6eb6ff;
+				cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
-<!-- 		<script>
+		<!-- 		<script>
 			setInterval("get_status()", 60000);
 			function get_status() {
 				var article = document.getElementById("article");
@@ -123,11 +222,12 @@
 				}
 			}
 		</script> -->
-		<article style="width: 65%;margin: 0 auto;text-align: center;" id="article">
-			<a style="font-size: 3rem;">查询助手</a><a id="useguide" href="https://github.com/cnhkbbs/zfspider"
+		<div id="background_image"></div>
+		<article style="margin: 0 auto;text-align: center;" id="article">
+			<a style="font-size: 4rem; color: #fff;">查询助手</a><a id="useguide" href="https://github.com/cnhkbbs/zfspider"
 				target="_blank">使用指南</a>
 			<form action="http://127.0.0.1:2023/submit" method="post" onsubmit="return prepara_submit();">
-				<table style="margin: 0 auto;">
+				<table id="form_table">
 					<tr>
 						<td><a>账号：</a></td>
 						<td><input name="name" id="name" type="text" /></td>
@@ -157,9 +257,11 @@
 						<td><input name="gnmkdm" id="gnmkdm" type="text" /></td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td>
 							<a>Header</a>
-							<select name="header">
+						</td>
+						<td>
+							<select name="header" id="selector">
 								<option value="0">0</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -169,16 +271,18 @@
 						</td>
 					</tr>
 				</table>
-				<input type="submit" value="提交任务"><input type="reset" value="清空表单">
+				<input type="submit" value="提交任务" class="form_button"><input type="reset" value="清空表单"
+					class="form_button">
 			</form>
 			<hr>
 			<div id="getresult">
-				<a>获取结果</a><br />
+				<a style="color:white;font-size: 25px;">获取结果</a><br />
 				<button onclick="getresult()">获取</button>
 			</div>
+			<div id="resultframe"></div>
+			<footer style="text-align: center;"><a href="https://github.com/cnhkbbs/zfspider">Source code</a></footer>
 		</article>
-		<div id="resultframe"></div>
-		<footer style="text-align: center;"><a href="https://github.com/cnhkbbs/zfspider">Source code</a></footer>
+
 		<script>
 			// 读取cookie
 			(function() {
@@ -198,6 +302,7 @@
 				document.getElementById("executions").value = executions;
 				document.getElementById("gnmkdm").value = gnmkdm;
 			})();
+
 			function get_status() {
 				var article = document.getElementById("article");
 				const xhr = new XMLHttpRequest();
