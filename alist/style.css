@@ -25,6 +25,10 @@
     background-image: url("https://cdnjson.com/images/2023/05/20/5f6c81b19b9a4d902fc897833ee67438--3464052747.jpg") !important;
     background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position-x:center;
 }
+/* 地址栏 */
+.hope-c-PJLV-idaeksS-css{
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
 /*主列表透明*/
 .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {
 background-color: rgba(255, 255, 255, 0.5) !important;
@@ -88,6 +92,9 @@ background-color: rgba(255, 255, 255, 0.5) !important;
 body {font-family: LXGW WenKai;}
 
 /*-----------------导航-------------------*/
+.hope-c-PJLV-ikaMhsQ-css{
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
 .container {
     width: auto;
     background-color: white;
