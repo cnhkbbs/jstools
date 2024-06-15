@@ -5,7 +5,7 @@
 ***
 ## About
 
-Collect some commonly used widgets and spread them to several CDNs to accelerate access
+Some useful jstools
 
 ***
 

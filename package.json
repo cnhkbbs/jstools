@@ -1,0 +1,22 @@
+{
+  "name": "jstools",
+  "version": "1.0.0",
+  "description": "some javascript tools",
+  "main": "index.html",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnhkbbs/jstools.git"
+  },
+  "keywords": [
+    "sboxm"
+  ],
+  "author": "sboxm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnhkbbs/jstools/issues"
+  },
+  "homepage": "https://github.com/cnhkbbs/jstools#readme"
+}
