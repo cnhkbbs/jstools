@@ -1,6 +1,6 @@
-# staticcdn
+# jstools
 
-[English](https://github.com/cnhkbbs/staticcdn/blob/main/README.md) | [中文](https://github.com/cnhkbbs/staticcdn/blob/main/README_zh-CN.md)
+[English](https://github.com/cnhkbbs/jstools/blob/main/README.md) | [中文](https://github.com/cnhkbbs/jstools/blob/main/README_zh-CN.md)
 
 ***
 ## 关于
@@ -12,11 +12,11 @@
 ## CDN
 
 ```
-GithubPages:  https://cnhkbbs.github.io/staticcdn/
+GithubPages:  https://cnhkbbs.github.io/jstools/
 
 Render:       https://sboxmcdn.onrender.com/
 
-jsDelivr:     https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn/
+jsDelivr:     https://cdn.jsdelivr.net/gh/cnhkbbs/jstools/
 ```
 ***
 ## 使用
@@ -26,13 +26,13 @@ CDN+文件目录
 ```
 例子
 ```
-https://cnhkbbs.github.io/staticcdn/showFPS/showFPS.js
+https://cnhkbbs.github.io/jstools/showFPS/showFPS.js
 https://sboxmcdn.onrender.com/showFPS/showFPS.js
-https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn/showFPS/showFPS.js
+https://cdn.jsdelivr.net/gh/cnhkbbs/jstools/showFPS/showFPS.js
 ```
 HTML代码
 ```
-<script src="https://cnhkbbs.github.io/staticcdn/showFPS/showFPS.js"></script>
+<script src="https://cnhkbbs.github.io/jstools/showFPS/showFPS.js"></script>
 ```
 ## 文件树
 ```
