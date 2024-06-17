@@ -1,6 +1,6 @@
 # jstools
 
-[English](https://github.com/cnhkbbs/jstools/blob/main/README.md) | [中文](https://github.com/jstools/jstools/blob/main/README_zh-CN.md)
+[English](https://github.com/cnhkbbs/jstools/blob/main/README.md) | [中文](https://github.com/cnhkbbs/jstools/blob/main/README_zh-CN.md)
 
 ***
 ## About
