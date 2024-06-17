@@ -2,12 +2,12 @@
 var fun = function() {
 	var flag = parseInt(Math.floor(Math.random() * (100 - 0 + 1)) + 0);
 	if (flag < 30) {
-		path = "https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn@main/live2d/";
-		api = "https://cdn.jsdelivr.net/gh/cnhkbbs/staticcdn@main/live2d/api/";
+		path = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/";
+		api = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/api/";
 		console.log("cdn2 Called");
 	} else {
-		path = "https://cnhkbbs.github.io/staticcdn/live2d/";
-		api = "https://cnhkbbs.github.io/staticcdn/live2d/api/";
+		path = "https://cnhkbbs.github.io/jstools/live2d/";
+		api = "https://cnhkbbs.github.io/jstools/live2d/api/";
 		console.log("cdn1 Called");
 	}
 }()
