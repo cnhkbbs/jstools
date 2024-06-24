@@ -6,7 +6,7 @@ var fun = function() {
 		api = "https://fastly.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/api/";
 		console.log("cdn2 Called");
 	} else {
-		path = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/";";
+		path = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/";
 		api = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/api/";
 		console.log("cdn1 Called");
 	}
