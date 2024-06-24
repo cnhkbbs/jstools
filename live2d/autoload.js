@@ -6,8 +6,8 @@ var fun = function() {
 		api = "https://fastly.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/api/";
 		console.log("cdn2 Called");
 	} else {
-		path = "https://sboxmcdn.onrender.com/live2d/";
-		api = "https://sboxmcdn.onrender.com/live2d/api/";
+		path = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/";";
+		api = "https://cdn.jsdelivr.net/gh/cnhkbbs/jstools@main/live2d/api/";
 		console.log("cdn1 Called");
 	}
 }()
