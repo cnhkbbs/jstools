@@ -37,12 +37,6 @@ HTML代码
 ## 文件树
 ```
 ├─fkQW   //一个禁止网页在微信或QQ访问的工具
-├─font-awesome //font-awesome框架
-│  ├─4.0.0
-│  └─4.2.0
 ├─hexo  //一些hexo以及hexo Butterfly主题的静态文件
-├─live2d //看板娘模型以及自动调用api
-│  └─api
-│      └─model
 └─showFPS  //显示网页帧率的小工具
 ```

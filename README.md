@@ -37,12 +37,6 @@ HTMLcode
 ## Tree
 ```
 ├─fkQW   // A tool that prohibits web pages from being accessed on WeChat or QQ
-├─font-awesome  //font-awesome framework
-│  ├─4.0.0
-│  └─4.2.0
 ├─hexo  //Static files for some hexo and hexo Butterfly themes
-├─live2d //Kanban Niang model and automatic call API
-│  └─api
-│      └─model
 └─showFPS //Widget for displaying web page frame rates
 ```
