@@ -1,42 +1,44 @@
 {
     "directory": {
       "name": "根目录",
-      "announcement": "欢迎使用我们的网盘服务！为了更好地服务用户，我们将进行系统维护，预计从2024年11月20日18:00至21:00暂停服务。给您带来的不便敬请谅解。",
+      "announcement": "下载速度慢？等几分钟再下载试试 （等待CDN缓存完成）",
       "files": [
         {
-          "filename": "重要通知.txt",
+          "filename": "文本文件.txt",
           "size": 320,
-          "downloadUrl": "http://example.com/files/重要通知.txt",
+          "downloadUrl": "http://example.com/files/文本文件.txt",
           "type": "text",
-          "description": "公司内部的重要通知，全体员工必读。"
+          "description": "测试文本文件"
         }
       ],
       "subdirectories": [
         {
-          "name": "工作资料",
+          "name": "软件",
           "files": [
             {
-              "filename": "年度报告.pptx",
-              "size": 4567890,
-              "downloadUrl": "http://example.com/files/工作资料/年度报告.pptx",
-              "type": "presentation",
-              "description": "2023年度的工作总结报告，包含关键数据和图表。"
+              "filename": "SpaceSniffer.exe",
+              "size": 2309632,
+              "downloadUrl": "https://file.sboxm.eu.org/large/SpaceSniffer.exe",
+              "type": "program",
+              "description": "可视化磁盘占用工具"
             }
           ],
           "subdirectories": []
         },
         {
-          "name": "个人收藏",
-          "files": [],
-          "subdirectories": [
+          "name": "图片测试",
+          "files": [
             {
-                "name": "收藏点什么呢",
-                "files": [],
-                "subdirectories": []
+              "filename": "1724429679740.jpg",
+              "size": 2309632,
+              "downloadUrl": "https://file.sboxm.eu.org/1724429679740.jpg",
+              "type": "jpg",
+              "description": "测试图片"
             }
-          ]
+          ],
+          "subdirectories": []
         }
       ]
     }
-}
+  }
   
