@@ -1,35 +1,42 @@
 {
-  "directory": {
-    "name": "根目录",
-    "announcement": "欢迎使用我们的网盘服务！为了更好地服务用户，我们将进行系统维护，预计从2024年11月20日18:00至21:00暂停服务。给您带来的不便敬请谅解。",
-    "files": [
-      {
-        "filename": "重要通知.txt",
-        "size": 320,
-        "downloadUrl": "http://example.com/files/重要通知.txt",
-        "type": "text",
-        "description": "公司内部的重要通知，全体员工必读。"
-      }
-    ],
-    "subdirectories": [
-      {
-        "name": "工作资料",
-        "files": [
-          {
-            "filename": "年度报告.pptx",
-            "size": 4567890,
-            "downloadUrl": "http://example.com/files/工作资料/年度报告.pptx",
-            "type": "presentation",
-            "description": "2023年度的工作总结报告，包含关键数据和图表。"
-          }
-        ],
-        "subdirectories": []
-      },
-      {
-        "name": "个人收藏",
-        "files": [],
-        "subdirectories": []
-      }
-    ]
-  }
+    "directory": {
+      "name": "根目录",
+      "announcement": "欢迎使用我们的网盘服务！为了更好地服务用户，我们将进行系统维护，预计从2024年11月20日18:00至21:00暂停服务。给您带来的不便敬请谅解。",
+      "files": [
+        {
+          "filename": "重要通知.txt",
+          "size": 320,
+          "downloadUrl": "http://example.com/files/重要通知.txt",
+          "type": "text",
+          "description": "公司内部的重要通知，全体员工必读。"
+        }
+      ],
+      "subdirectories": [
+        {
+          "name": "工作资料",
+          "files": [
+            {
+              "filename": "年度报告.pptx",
+              "size": 4567890,
+              "downloadUrl": "http://example.com/files/工作资料/年度报告.pptx",
+              "type": "presentation",
+              "description": "2023年度的工作总结报告，包含关键数据和图表。"
+            }
+          ],
+          "subdirectories": []
+        },
+        {
+          "name": "个人收藏",
+          "files": [],
+          "subdirectories": [
+            {
+                "name": "收藏点什么呢",
+                "files": [],
+                "subdirectories": []
+            }
+          ]
+        }
+      ]
+    }
 }
+  
