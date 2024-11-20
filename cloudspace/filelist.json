@@ -13,6 +13,20 @@
                         "downloadUrl": "https://file.sboxm.eu.org/large/SpaceSniffer.exe",
                         "type": "program",
                         "description": "可视化磁盘占用工具"
+                    },
+                    {
+                        "filename": "关闭Win10自动更新.exe",
+                        "size": 25265872,
+                        "downloadUrl": "https://file.sboxm.eu.org/large/%E5%85%B3%E9%97%ADWin10%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0.exe",
+                        "type": "exe",
+                        "description": "关闭Win10自动更新工具"
+                    },
+                    {
+                        "filename": "关闭Win11自动更新.exe",
+                        "size": 18153168,
+                        "downloadUrl": "https://file.sboxm.eu.org/large/%E5%85%B3%E9%97%ADWin11%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0.exe",
+                        "type": "exe",
+                        "description": "关闭Win11自动更新工具"
                     }
                 ],
                 "subdirectories": []
